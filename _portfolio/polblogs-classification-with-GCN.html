@@ -1,0 +1,48 @@
+---
+title: "Political blogs classification using Graph Convolutional Networks (GCNs)"
+excerpt: "This project creates a GCN to classify blogs within the Polblogs dataset as belonging to Conservative or Liberal. <br/><img src='/images/polblogs_general.JPG' width='50%' alt='Polblogs' height='auto' class='center' />"
+collection: portfolio
+---
+
+The goal of this project is to classify political blogs as either <b>liberal or conservative</b> using the <b>Polblogs dataset</b>.  
+The dataset used is the one recorded and analysed in <a href="https://dl.acm.org/doi/10.1145/1134271.1134277">this paper</a> proposed in 2005, which contains a collection of the political blogs that were most active in 2004 in the run-up to the US presidential election.  
+This dataset not only includes metadata about individual blogs but also captures the <b>hyperlinks between</b> them, forming a <b>graph structure</b> that reflects the networked nature of political discourse.
+
+<div style="text-align:center; margin: 2px">
+  <img src='/images/polblogs_general.JPG' width='100%' alt='Polblogs' height='auto' class='center'/>
+</div>
+
+<h2> 📬 Key Features </h2>
+
+<ul>
+  <li>
+    <b>Text embedding generation</b>    
+    The Polblogs dataset is processed with BERT to obtain text embeddings in order to feed the GCN
+  </li>
+  <li>
+    <b>New architecture proposed</b>  
+    A novel architecture is introduced to leverage GCN and adapt them to this dataset
+
+    <div style="text-align:center; margin: 2px">
+      <img src='/images/polblogs_model.JPG' width='100%' alt='Model architecture' height='auto' class='center'/>
+    </div>
+  </li>
+  <li>
+    <b>Metric evaluation on test set</b>  
+    After training the model, evaluation metrics were computed on the train set. Here are showed results.
+
+    <div style="text-align:center; margin: 2px">
+      <img src='/images/polblogs_cm.JPG' width='50%' alt='Confusion Matrix' height='auto' class='center'/>
+    </div>
+
+    <div style="text-align:center; margin: 2px">
+      <img src='/images/polblogs_metrics.JPG' width='50%' alt='Classification metrics' height='auto' class='center'/>
+    </div>
+  </li>
+</ul>
+
+<h2>📄 License</h2>
+
+This project is distributed under the Apache 2.0 License
+
+For more details, visit the <a href="https://github.com/GiuseppeFarano/polblogs-classification-with-GCN">Github repository.</a>

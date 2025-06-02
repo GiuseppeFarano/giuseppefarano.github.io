@@ -1,0 +1,120 @@
+---
+title: "Global Localiser for Automated Guided Vehicles (AGV)"
+excerpt: "Project that realized an alternative to GPS-based localization for autonomous vehicles, relying entirely on Artificial Vision and Statistical Methods. <br/><img src='/images/avg_setup_complete.png' width='30%' alt='AVG' height='auto' class='center' />"
+collection: portfolio
+---
+
+This project offers an alternative to GPS-based localization for autonomous vehicles, relying entirely on <b>Artificial Vision Systems</b>.
+
+<div style="text-align:center; margin: 2px">
+  <img src='/images/avg_setup_complete.png' width='30%' alt='Setup' height='auto' class='center'/>
+</div>
+
+<h2>📬 Key Features</h2>
+
+<h3>🛠️ Hardware</h3>
+
+<ul>
+  <li>
+    <b>Depth Camera:</b> Intel RealSense D415 
+  </li>
+    <li>
+    <b>LiDAR:</b> Blickfeld Cube 1  
+  </li>
+</ul>
+
+The LiDAR and RGB camera were aligned and mounted together to capture the same scene, enabling the RGB data to provide visual reference and context for the corresponding point cloud.
+
+<div style="text-align:center; margin: 2px">
+  <img src='/images/avg_setup_camera_only.png' width='30%' alt='Camera' height='auto' class='center'/>
+</div>
+
+<h3>🧠 Scenario Study & System Setup</h3>
+
+A custom setup was designed and implemented to synchronize a <b>LiDAR</b> and a <b>Depth camera</b>, operating in <b>free-run mode</b>, using Python's `threading` library.
+
+<h3>🎥 Data Acquisition</h3>
+
+The system collects:
+<ul>
+  <li>
+    <b>RGB Images</b> from the depth camera.
+    <div style="text-align:center; margin: 2px">
+      <img src='/images/avg_door.png' width='40%' alt='Door' height='auto' class='center'/>
+    </div>
+  </li>
+  <li>
+    <b>3D Point Clouds</b> from the LiDAR.
+    <div style="text-align:center; margin: 2px">
+      <img src='/images/avg_door_pointcloud.png' width='40%' alt='Door Pointcloud' height='auto' class='center'/>
+    </div>
+  </li>
+</ul>
+
+To analyze the acquired data, <b>Kullback-Leibler divergence</b> is applied on selected point cloud regions to identify patterns useful for AGV localization.
+
+<h3>🔍 KL Divergence Results</h3>
+
+The analysis was performed by comparing point cloud regions corresponding to different acquisition timestamps. For each comparison, the <b>Kullback-Leibler (KL) divergence</b> was computed to quantify the dissimilarity between distributions of two frames.
+
+The goal was to identify which frame pairs showed the greatest similarity (i.e., lowest KL divergence), helping determine the most probable match or alignment between the camera and LiDAR acquisitions.
+
+<table style="border-collapse: collapse; width: 60%; margin-left: auto; margin-right: auto;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Frame</th>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">Comparison</th>
+      <th style="border: 1px solid black; padding: 8px; background-color: #f2f2f2;">KL Divergence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;" rowspan="3">Frame_1</td>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_1 at t+1</td>
+      <td style="border: 1px solid black; padding: 8px;"><b>0.0192</b></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_2</td>
+      <td style="border: 1px solid black; padding: 8px;">0.0486</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_3</td>
+      <td style="border: 1px solid black; padding: 8px;">0.1486</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;" rowspan="3">Frame_2</td>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_1</td>
+      <td style="border: 1px solid black; padding: 8px;">0.0862</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_2 at t+1</td>
+      <td style="border: 1px solid black; padding: 8px;"><b>0.0510</b></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_3</td>
+      <td style="border: 1px solid black; padding: 8px;">0.1824</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;" rowspan="3">Frame_3</td>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_1</td>
+      <td style="border: 1px solid black; padding: 8px;">0.1423</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_2</td>
+      <td style="border: 1px solid black; padding: 8px;">0.1342</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 8px;">vs Frame_3 at t+1</td>
+      <td style="border: 1px solid black; padding: 8px;"><b>0.0185</b></td>
+    </tr>
+  </tbody>
+</table>
+
+
+These values clearly show that the lowest KL divergence always occur between <b>Frame_x from Frame_x at t+1</b>, suggesting a strong spatial and visual similarity in that pair. This supports the use of KL divergence as an effective metric for matching and localizing AGV observations across sensor streams.
+
+<h2>📄 License</h2>
+
+This project is distributed under the Apache 2.0 License
+
+For more details, visit the <a href="https://github.com/GiuseppeFarano/agv-global-localiser">Github repository.</a>
