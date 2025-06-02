@@ -22,12 +22,12 @@ repository               : "giuseppefarano.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "Github_logo.png"
   name             : "Giuseppe Farano"
   pronouns         : # example: "she/her"  
   bio              : "Computer Engineering student interested in AI and Data Science."
   location         : "Bari, Italy"
-  employer         : "Red Brick University"
+  employer         : "Politecnico di Bari"
   uri              : # URL
   email            : "farano.giuseppe@gmail.com" 
 

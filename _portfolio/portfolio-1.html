@@ -1,0 +1,46 @@
+---
+title: "Road Damage Detection Web-App"
+excerpt: "This project introduces a web app for the automatic detection of road damage along routes, using advanced machine learning and cloud technologies. It showcases a feature that could enhance tools like Google Maps by alerting users to road damage and helping them avoid hazardous paths. <br/><img src='/images/rdd_front_image.JPG' width='80%' alt='Road Damage Detection Front Image' height='auto' class='center'/>"
+collection: portfolio
+---
+
+This project aims to develop an innovative web application for the <b>automatic detection of road damage</b> along specific routes, leveraging advanced machine learning models and cloud technologies.
+
+<div style="text-align:center; margin: 2px">
+  <img src='/images/rdd_front_image.JPG' width='100%' alt='Road Damage Detection Front Image' height='auto' class='center'/>
+</div>
+
+The goal is to demonstrate a practical feature that could be integrated into <b>Google Maps</b> or other navigation tools, allowing users to be informed about the <b>road damage conditions</b> along their route helping them to <b>avoid damaged or hazardous roads</b>.
+
+<div align="center" style="margin: 2px">
+  <img src="/images/rdd_problem.JPG" width='50%' alt='Problem' height='auto' class='center'/>
+</div>
+
+<h2>Key Features</h2>
+    <li>📍 Integration with <b>Google Maps API</b> and <b>OpenStreetMap</b> to acquire up-to-date routes and street images.</li>
+    <li>🤖 Use of the famous <b>YOLOv7</b> by Ultralytics model for <b>detecting and classifying road damage</b>, such as cracks and potholes.</li>
+    <li>🧱 Visual identification of detected damages overlaid on maps for intuitive navigation. </li>
+    <li>🧠 A <b>Model-View-Controller (MVC)</b> architecture built with the <b>Flask</b> framework ensures modularity, scalability, and maintainability.</li>
+</ul>
+
+<h2>🧪 Example</h2>
+
+<ol>
+    <li>The user inserts the departure and destination locations in the input box, then it pushes the "Obtain images" button.
+        <div align="center" style="margin: 2px">
+        <img src="/images/rdd_example_plot.JPG" alt="Example Plot" width="50%" style="border: 2px solid black;"/>
+        </div> 
+    </li>
+    <li>An API call is made to OpenStreetMap to obtain the route. Then, coordinates are extracted from received route and are used to query Google Street View in order to obtain images. The received images are pre-processed and passed as input to the Yolov7 model. The final result is the following
+        <div align="center" style="margin: 2px">
+        <img src="/images/rdd_example.JPG" alt="Example Damages" width="100%"/>
+        </div>
+    </li>
+    <li>On the right, a carousel showing detected damages on the route's road. On the left, a graphic that shows stathistics about the distribution of detected damages among the classes: Longitudinal, Lateral and Alligator Cracks, and Potholes.</li>
+</ol>
+
+<h2>📄 License</h2>
+
+This project is distributed under the Apache 2.0 License
+
+For more details, visit the <a href="https://github.com/GiuseppeFarano/road-damage-detection/tree/main">Github repository.</a>

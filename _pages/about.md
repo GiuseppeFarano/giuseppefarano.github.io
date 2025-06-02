@@ -7,6 +7,4 @@ redirect_from:
   - /about.html
 ---
 
-This is Giuseppe Farano's home on the web!
-
 Work in progress...
