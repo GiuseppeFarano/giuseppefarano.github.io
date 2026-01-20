@@ -22,14 +22,14 @@ repository               : "giuseppefarano.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "Github_logo.png"
+  avatar           : "profile_picture.jpg"
   name             : "Giuseppe Farano"
   pronouns         : # example: "she/her"  
-  bio              : "Computer Engineering student interested in AI and Data Science."
+  bio              : "Ph.D. student in National Doctorate in Robotics and Intelligent Machines (ph-DRIM)"
   location         : "Bari, Italy"
-  employer         : "Politecnico di Bari"
+  employer         : "[CNR STIIMA](https://www.stiima.cnr.it/) - [Leonardo S.p.A.](https://www.leonardo.com/en/)"
   uri              : # URL
-  email            : "farano.giuseppe@gmail.com" 
+  email            : "giuseppe.farano@stiima.cnr.it" 
 
   # Academic websites
   academia         : # URL
@@ -89,7 +89,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
