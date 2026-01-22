@@ -23,9 +23,9 @@ repository               : "giuseppefarano.github.io"
 author:
   # Biographic information
   avatar           : "profile_picture.jpg"
-  name             : "Giuseppe Farano"
+  name             : ""
   pronouns         : # example: "she/her"  
-  bio              : "Ph.D. student in National Doctorate in Robotics and Intelligent Machines (ph-DRIM)"
+  bio              : "Ph.D. student in National Doctorate in Robotics and Intelligent Machines (DRIM)"
   location         : "Bari, Italy"
   employer         : "[CNR STIIMA](https://www.stiima.cnr.it/) - [Leonardo S.p.A.](https://www.leonardo.com/en/)"
   uri              : # URL
@@ -34,9 +34,9 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : # "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.com/citations?user=tvexArsAAAAJ&hl=it"
   impactstory      : # URL
-  orcid            : # "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0009-0001-8265-028X"
   semantic         : # URL
   pubmed           : # "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
   researchgate     : # URL
